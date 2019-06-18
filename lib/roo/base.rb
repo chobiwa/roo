@@ -491,7 +491,7 @@ class Roo::Base
   end
 
   def sanitize_value(v)
-    v.gsub(/[[:cntrl:]]|^[\p{Space}]+|[\p{Space}]+$/, "")
+    v.gsub(/[[:cntrl:]&&[^\r\n\t]]/, "").strip
   end
 
   def set_headers(hash = {})
